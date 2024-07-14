@@ -22,7 +22,7 @@
 /* dark 02 */
 
 .text-primary {
-  color: #ff9003;
+  color: #ff900e;
 }
 
 .text-gray {
@@ -142,6 +142,62 @@ main > section {
   font-weight: 500;
 }
 
+/* some facts style
+ */
+
+.facts-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.facts-container > * {
+  margin: 20px 0px;
+}
+
+.fact-card {
+  border: 1px solid #ff900e;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  border-radius: 8px;
+  height: 240px;
+}
+
+.fact-number {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.fact-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+#fact-description {
+  max-width: 540px;
+}
+
+/* sponsor styles */
+
+.sponsor-info {
+  max-width: 540px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.sponsor-companies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.sponsor-companies {
+  filter: grayscale(100%);
+}
+
 /* responsive media query */
 
 @media screen and (max-width: 576px) {
@@ -150,7 +206,9 @@ main > section {
   .teams {
     flex-direction: column;
   }
-  .team-img-container {
+  .team-img-container,
+  .facts-container,
+  .sponsor-companies {
     grid-template-columns: repeat(1, 1fr);
   }
   .our-features {
@@ -162,6 +220,16 @@ main > section {
     margin-bottom: 20px;
     margin-top: 20px;
   }
+  .facts-container,
+  .sponsor-companies {
+    justify-items: center;
+    /* border: 2px solid red; */
+    gap: 24px;
+  }
+  .sponsor-companies {
+    justify-content: center;
+    gap: 50px;
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 992px) {
@@ -170,6 +238,18 @@ main > section {
   }
   .our-features {
     margin: 50px auto;
+  }
+  .facts-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* border: 2px solid red; */
+    /* align-items: center; */
+    justify-items: center;
+    align-items: center;
+  }
+  .sponsor-companies {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 25px;
   }
 }
 
